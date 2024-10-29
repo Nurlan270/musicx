@@ -9,3 +9,28 @@
     background: linear-gradient(142deg, rgba(0, 0, 0, 1) 45%, rgba(79, 79, 79, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#4f4f4f", GradientType=1);
 }
+
+@keyframes border-expand {
+    0% {
+        box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 0 10px rgba(234, 179, 8, 0);
+    }
+}
+
+/* Button styling */
+.animated-btn {
+    background-color: #2D2F33;
+    border-radius: 1.5rem;
+    border: 2px solid #eab308;
+    font-weight: bold;
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+    animation: border-expand 1.2s infinite;
+}
+
+.animated-btn:hover {
+    transform: translateY(-0.375rem);
+}
