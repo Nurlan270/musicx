@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-.gradient {
+/* Welcome Page Styles */
+.welcome-gradient {
     background: rgb(0, 0, 0);
     background: -moz-linear-gradient(142deg, rgba(0, 0, 0, 1) 45%, rgba(79, 79, 79, 1) 100%);
     background: -webkit-linear-gradient(142deg, rgba(0, 0, 0, 1) 45%, rgba(79, 79, 79, 1) 100%);
@@ -32,5 +33,9 @@
 }
 
 .animated-btn:hover {
-    transform: translateY(-0.375rem);
+    transform: scale(1.1);
 }
+
+/* END */
+
+/* Listen Page Styles */
