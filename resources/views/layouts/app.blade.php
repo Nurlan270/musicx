@@ -28,9 +28,20 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body @if(Route::is('welcome')) class="gradient h-screen overflow-hidden" @endif>
+<body class="h-screen px-72 text-white bg-[#181818] overflow-hidden">
 
+<header
+    class="w-screen h-16 flex items-center justify-between relative left-1/2 transform -translate-x-1/2 text-white px-80 bg-[#121212]">
+    <h1 class="text-4xl font-mono">
+        Music<span class="text-[#eab308] font-bold ps-3">X</span>
+    </h1>
+</header>
+
+<main
+    class="my-5">
     @yield('content')
+</main>
 
+@stack('js')
 </body>
 </html>

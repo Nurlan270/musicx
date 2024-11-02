@@ -39,3 +39,30 @@
 /* END */
 
 /* Listen Page Styles */
+.wave-container {
+    display: flex;
+    gap: 4px;
+}
+
+.wave-column {
+    width: 5px; /* Width of each column */
+    background-color: white; /* Color of the columns */
+    border-radius: 50px; /* Rounded borders */
+    transform-origin: center; /* Scale from center */
+    height: 15px; /* Initial height */
+    transition: transform 0.5s ease; /* Smooth height transition */
+}
+
+.vinyl-disk {
+    width: 60px;
+    transform-origin: center;
+}
+
+@keyframes rotate-disk {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
