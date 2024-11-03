@@ -5,7 +5,7 @@
     <div>
         <div class="relative group">
             <div class="w-full h-[575px]">
-                <video class="rounded-2xl h-full hidden video" data-url="{{ config('APP_URL') }}"
+                <video class="rounded-2xl h-full hidden video"
                        src="{{ asset('background-videos/lofi-'. mt_rand(1,5) .'.mp4') }}"
                        autoplay loop playsinline>
                     Your browser does not support the video.

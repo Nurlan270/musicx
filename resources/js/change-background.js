@@ -8,13 +8,18 @@ function changeVideo() {
 
     const newVideoNum = Math.floor(Math.random() * 5 + 1);
     const currentVidNum = Number(video.src.match(/lofi-(\d+)\.mp4/)[1]);
+    const appUrl = document.querySelector('meta[name="url"]').getAttribute('content');
 
     newVideoNum === currentVidNum
         ? changeVideo()
-        : video.src = `${video.dataset.url}/background-videos/lofi-${newVideoNum}.mp4`;
+        : video.src = `${appUrl}/background-videos/lofi-${newVideoNum}.mp4`;
 
-    video.onloadeddata = () => {
-        loader.classList.add('hidden');
-        video.classList.remove('hidden');
-    };
+    let id = setInterval(() => {
+        if (video.readyState >= 3) {
+            loader.classList.add('hidden');
+            video.classList.remove('hidden');
+
+            clearInterval(id);
+        }
+    }, 250);
 }

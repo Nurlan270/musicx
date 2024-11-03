@@ -4,12 +4,14 @@ const changeBtn = document.querySelector('.change-video-btn');
 
 loader.classList.remove('hidden')
 
-setTimeout(() => {
-    if (video.readyState === 4) {
+let id = setInterval(() => {
+    if (video.readyState >= 3) {
         loader.classList.add('hidden');
         video.classList.remove('hidden');
         changeBtn.classList.add('group-hover:block');
-    }
-}, 500)
 
-export { changeBtn, video, loader }
+        clearInterval(id);
+    }
+}, 250);
+
+export {changeBtn, video, loader}
