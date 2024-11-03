@@ -1,27 +1,24 @@
-import {changeBtn, video, loader} from './loader.js';
+import {changeBtn, gif, loader} from './loader.js';
 
-if (changeBtn && video && loader) {
-    changeBtn.onclick = () => changeVideo();
+if (changeBtn && gif && loader) {
+    changeBtn.onclick = () => changeGif();
 
-    function changeVideo() {
-        video.classList.add('hidden');
+    function changeGif() {
+        gif.classList.add('hidden');
         loader.classList.remove('hidden');
 
-        const newVideoNum = Math.floor(Math.random() * 5 + 1);
-        const currentVidNum = Number(video.src.match(/lofi-(\d+)\.mp4/)[1]);
+        const newGifNum = Math.floor(Math.random() * 11 + 1);
+        const currentGifNum = Number(gif.src.match(/lofi-(\d+)\.gif/)[1]);
         const appUrl = document.querySelector('meta[name="url"]').getAttribute('content');
 
-        newVideoNum === currentVidNum
-            ? changeVideo()
-            : video.src = `${appUrl}/background-videos/lofi-${newVideoNum}.mp4`;
+        newGifNum === currentGifNum
+            ? changeGif()
+            : gif.src = `${appUrl}/gifs/lofi-${newGifNum}.gif`;
 
-        let id = setInterval(() => {
-            if (video.readyState >= 3) {
-                loader.classList.add('hidden');
-                video.classList.remove('hidden');
+        gif.onload = () => {
+            loader.classList.add('hidden');
+            gif.classList.remove('hidden');
+        }
 
-                clearInterval(id);
-            }
-        }, 250);
     }
 }

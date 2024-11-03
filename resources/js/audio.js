@@ -22,6 +22,7 @@ if (audio && disk) {
 
 // Attach event listeners for play, pause, and ended
     audio.onplay = startAnimation;
+    audio.onplaying = startAnimation;
     audio.onpause = stopAnimation;
     audio.onended = () => {
         stopAnimation();

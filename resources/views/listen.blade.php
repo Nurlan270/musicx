@@ -5,19 +5,17 @@
     <div>
         <div class="relative group">
             <div class="w-full h-[575px]">
-                <video class="rounded-2xl h-full hidden video"
-                       src="{{ asset('background-videos/lofi-'. mt_rand(1,5) .'.mp4') }}"
-                       autoplay loop playsinline muted>
-                    Your browser does not support the video.
-                </video>
+                <img class="rounded-2xl h-full hidden gif"
+                     src=""
+                     alt="Lo-Fi Gif (Something went wrong while loading gif, refresh page to load it again)">
 
                 <div class="rounded-2xl bg-[#262626] h-full flex items-center justify-center hidden loader">
                     <img class="w-40" src="{{ asset('assets/loader.svg') }}" alt="Loading...">
                 </div>
             </div>
 
-            <button class="hidden absolute top-5 right-5 p-2 rounded-xl bg-[#424242] cursor-pointer change-video-btn"
-                    title="Change Video">
+            <button class="hidden absolute top-5 right-5 p-2 rounded-xl bg-[#424242] cursor-pointer change-gif-btn"
+                    title="Change Gif">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                      stroke="currentColor" class="size-5">
                     <path stroke-linecap="round" stroke-linejoin="round"

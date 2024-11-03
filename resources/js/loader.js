@@ -1,19 +1,20 @@
 const loader = document.querySelector('.loader');
-const video = document.querySelector('.video');
-const changeBtn = document.querySelector('.change-video-btn');
+const gif = document.querySelector('.gif');
+const changeBtn = document.querySelector('.change-gif-btn');
+const url = document.querySelector('meta[name="url"]');
+const appUrl = url ? url.getAttribute('content') : null;
+const randomGif = Math.floor(Math.random() * 11 + 1);
 
-if (loader && video && changeBtn) {
+if (loader && gif && changeBtn) {
     loader.classList.remove('hidden')
 
-    let id = setInterval(() => {
-        if (video.readyState >= 3) {
-            loader.classList.add('hidden');
-            video.classList.remove('hidden');
-            changeBtn.classList.add('group-hover:block');
+    gif.src = `${appUrl}/gifs/lofi-${randomGif}.gif`;
 
-            clearInterval(id);
-        }
-    }, 250);
+    gif.onload = () => {
+        loader.classList.add('hidden');
+        gif.classList.remove('hidden');
+        changeBtn.classList.add('group-hover:block');
+    }
 }
 
-export {changeBtn, video, loader}
+export {changeBtn, gif, loader}
