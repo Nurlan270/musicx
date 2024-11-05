@@ -5,10 +5,10 @@
     <main
         class="mx-4 sm:mx-10 md:mx-20 lg:mx-40 my-16 md:my-24 lg:my-32 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-9">
         <div class="max-w-xl text-white">
-            <h1 class="text-4xl font-mono md:text-5xl lg:text-6xl mb-5 md:mb-7 mt-12">
+            <h1 class="text-4xl font-sans md:text-5xl lg:text-6xl mb-5 md:mb-7 mt-12">
                 Music<span class="text-[#eab308] font-bold ps-4">X</span>
             </h1>
-            <p class="text-[#A0A0A0] text-lg md:text-xl mb-5 md:mb-7 leading-7 md:leading-8">
+            <p class="text-[#A0A0A0] text-lg md:text-xl mb-5 md:mb-7 leading-7 md:leading-8 font-medium">
                 Your ultimate music companion for every moment. Dive into specially curated playlists that keep you in
                 the
                 zone for productivity, relaxation, focus, or creativity. Whether you're working, studying, coding, or

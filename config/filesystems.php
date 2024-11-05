@@ -57,6 +57,13 @@ return [
             'throw' => false,
         ],
 
+        'songs' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/songs'),
+            'url' => env('APP_URL').'/songs',
+            'visibility' => 'public',
+            'throw' => false,
+        ]
     ],
 
     /*
@@ -71,7 +78,7 @@ return [
     */
 
     'links' => [
-        public_path('storage') => storage_path('app/public'),
+        public_path('songs') => storage_path('app/public/songs'),
     ],
 
 ];

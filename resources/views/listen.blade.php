@@ -7,7 +7,7 @@
             <div class="w-full h-[575px]">
                 <img class="rounded-2xl h-full hidden gif"
                      src=""
-                     alt="Lo-Fi Gif (Something went wrong while loading gif, refresh page to load it again)">
+                     alt="Gif (Something went wrong while loading gif, refresh page to retry)">
 
                 <div class="rounded-2xl bg-[#262626] h-full flex items-center justify-center hidden loader">
                     <img class="w-40" src="{{ asset('assets/loader.svg') }}" alt="Loading...">
