@@ -85,4 +85,6 @@ return [
     */
 
     'livewire_loading_delay' => 'default',
+
+    'admin_email' => env('FILAMENT_ADMIN_EMAIL')
 ];
