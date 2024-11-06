@@ -32,14 +32,14 @@
 <body class="h-screen px-72 text-white bg-[#181818] overflow-hidden">
 
 <header
-    class="w-screen h-16 flex items-center justify-between relative left-1/2 transform -translate-x-1/2 text-white px-80 bg-[#121212]">
+    class="w-screen h-16 flex items-center justify-between relative left-1/2 transform -translate-x-1/2 text-white px-80">
     <h1 class="text-4xl font-sans">
         Music<span class="text-[#eab308] font-bold ps-3">X</span>
     </h1>
 
     <div class="flex flex-col items-center">
         <select id="genres" name="genres"
-            class="bg-[#121212] text-[#eab308] border border-[#eab308] rounded-xl p-2 w-48 text-center cursor-pointer hover:bg-[#181818] appearance-none font-bold">
+            class="bg-transparent text-[#eab308] border border-[#eab308] rounded-xl p-2 w-48 text-center cursor-pointer transition-colors hover:bg-[#212121] appearance-none font-bold">
             <option value="none" class="bg-[#181818] text-[#eab308]" selected disabled>Choose music genre</option>
             @foreach($genres as $genre)
                 <option value="{{ $genre->id }}" class="bg-[#181818] text-[#eab308]">{{ $genre->name }}</option>

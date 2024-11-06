@@ -25,8 +25,8 @@
         </div>
 
         <div class="flex items-center justify-between mt-4 px-4">
-            <audio id="audio" autoplay loop hidden>
-                <source src="{{ asset('songs/spirit-blossom-15285.mp3') }}" type="audio/mpeg">
+            <audio id="audio" hidden>
+                <source src="{{ asset('songs/01JC0S2RR0EKAJ1ZPKYV8BJ91Y.mp3') }}" type="audio/mpeg">
                 Your browser does not support the audio.
             </audio>
 

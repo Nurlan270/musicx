@@ -1,4 +1,5 @@
 import {changeBtn, gif, loader} from './loader.js';
+import {changeBackground} from "./dynamic-background.js";
 
 if (changeBtn && gif && loader) {
     changeBtn.onclick = () => changeGif();
@@ -18,6 +19,8 @@ if (changeBtn && gif && loader) {
         gif.onload = () => {
             loader.classList.add('hidden');
             gif.classList.remove('hidden');
+
+            changeBackground();
         }
 
     }

@@ -1,3 +1,5 @@
+import {changeBackground} from "./dynamic-background.js";
+
 const loader = document.querySelector('.loader');
 const gif = document.querySelector('.gif');
 const changeBtn = document.querySelector('.change-gif-btn');
@@ -14,6 +16,8 @@ if (loader && gif && changeBtn) {
         loader.classList.add('hidden');
         gif.classList.remove('hidden');
         changeBtn.classList.add('group-hover:block');
+
+        changeBackground();
     }
 }
 
