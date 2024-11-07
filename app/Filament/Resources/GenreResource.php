@@ -29,6 +29,7 @@ class GenreResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->label('Genre name')
                     ->placeholder('Lo-Fi')
+                    ->unique('genres', 'name')
                     ->required()
             ]);
     }
