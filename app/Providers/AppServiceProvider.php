@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Genre;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -30,5 +31,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer('layouts.app', function ($view) {
             $view->with('genres', Genre::all());
         });
+
+        JsonResource::withoutWrapping();
     }
 }

@@ -26,7 +26,7 @@
 
         <div class="flex items-center justify-between mt-4 px-4">
             <audio id="audio" hidden>
-                <source src="{{ asset('songs/01JC0S2RR0EKAJ1ZPKYV8BJ91Y.mp3') }}" type="audio/mpeg">
+                <source src="" type="audio/mpeg">
                 Your browser does not support the audio.
             </audio>
 
@@ -34,8 +34,8 @@
                 <img class="vinyl-disk" src="{{ asset('assets/vinyl-disk.png') }}"
                      alt="Vinyl disk">
                 <div>
-                    <h1 class="text-white font-semibold text-lg">Song name</h1>
-                    <h6 class="text-gray-300 font-light text-sm">by Author</h6>
+                    <h1 class="text-white font-semibold text-lg text-skeleton w-32 mb-1" id="song-name"></h1>
+                    <h6 class="text-gray-300 font-light text-sm text-skeleton w-32" id="song-author"></h6>
                 </div>
             </div>
 

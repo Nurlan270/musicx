@@ -7,3 +7,4 @@ import './audio';
 import './loader';
 import './change-gif';
 import './dynamic-background';
+import './get-song'

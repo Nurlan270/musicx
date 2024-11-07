@@ -21,4 +21,4 @@ if (loader && gif && changeBtn) {
     }
 }
 
-export {changeBtn, gif, loader}
+export {changeBtn, gif, loader, appUrl}

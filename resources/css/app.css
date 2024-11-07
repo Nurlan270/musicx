@@ -70,3 +70,16 @@ header {
         transform: rotate(360deg);
     }
 }
+
+.text-skeleton {
+    border-radius: 7px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(0, 0%, 60%);
+    }
+    100% {
+        background-color: hsl(0, 0%, 40%);
+    }
+}
