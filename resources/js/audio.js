@@ -1,4 +1,5 @@
 import {columns, animateWave} from "./wave-animation.js";
+import {updateButton} from "./action-btn.js";
 
 const audio = document.getElementById('audio');
 const disk = document.querySelector('.vinyl-disk');
@@ -25,6 +26,7 @@ if (audio && disk) {
     audio.onplaying = startAnimation;
     audio.onpause = stopAnimation;
     audio.onended = () => {
+        updateButton();
         stopAnimation();
         columns.forEach(column => {
             column.style.transform = 'scaleY(1)'; // Reset to original scale

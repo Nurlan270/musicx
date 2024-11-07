@@ -17,7 +17,7 @@ if (waveContainer) {
 // Function to animate the columns
 function animateWave() {
     columns.forEach(column => {
-        const randomScale = Math.round(Math.random() * 2 + 1);
+        const randomScale = Math.round(Math.random() * 3 + 1);
         column.style.transform = `scaleY(${randomScale})`;
     });
 }
