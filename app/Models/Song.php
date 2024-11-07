@@ -11,8 +11,9 @@ class Song extends Model
     public $timestamps = false;
 
     protected $fillable = [
-      'name', 'genre_id',
-      'link',
+        'name', 'author',
+        'genre_id',
+        'link',
     ];
 
     protected static function booted(): void
