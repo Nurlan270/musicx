@@ -24,11 +24,9 @@ if (audio && button) {
     updateButton();
 
     button.onclick = () => {
-        if (!audio.paused) {
-            audio.pause()
-        } else {
-            audio.play();
-        }
+        !audio.paused
+            ? audio.pause()
+            : audio.play();
 
         updateButton();
     };
