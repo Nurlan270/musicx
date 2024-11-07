@@ -6,20 +6,22 @@ const songName = document.querySelector('#song-name');
 const songAuthor = document.querySelector('#song-author');
 
 if (genre) {
-    if (genre.value === 'none') {
-        getRandomSong();
-    }
+    genre.value === 'none'
+        ? getSong()
+        : getSong(genre.value);
 
-    genre.onchange = () => {
-        //
-    }
+    genre.onchange = () => getSong(genre.value);
 }
 
-function getRandomSong() {
+function getSong(genreName = 'random') {
+    audio.src = '';
+    songName.innerText = '';
+    songAuthor.innerText = '';
+
     songName.style.animation = 'skeleton-loading 1s linear infinite alternate';
     songAuthor.style.animation = 'skeleton-loading 1s linear infinite alternate';
 
-    fetch(appUrl + '/api/songs/random')
+    fetch(appUrl + `/api/songs/${genreName}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error("Couldn't get song, please try again.");

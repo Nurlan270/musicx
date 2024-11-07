@@ -39,7 +39,7 @@
 
     <div class="flex flex-col items-center">
         <select id="genre" name="genre"
-            class="bg-transparent text-[#eab308] border border-[#eab308] rounded-xl p-2 w-48 text-center cursor-pointer transition-colors hover:bg-[#212121] appearance-none font-bold">
+            class="bg-transparent text-[#eab308] border border-[#eab308] rounded-xl p-2 w-48 text-center cursor-pointer transition-colors hover:bg-[#2e2e2e] appearance-none font-bold">
             <option value="none" class="bg-[#181818] text-[#eab308]" selected disabled>Choose music genre</option>
             @foreach($genres as $genre)
                 <option value="{{ $genre->name }}" class="bg-[#181818] text-[#eab308]">{{ $genre->name }}</option>
