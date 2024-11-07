@@ -20,6 +20,8 @@ function getSong(genreName = 'random') {
 
     resetAnimations();
 
+    songName.classList.add('w-32');
+    songAuthor.classList.add('w-32');
     songName.style.animation = 'skeleton-loading 1s linear infinite alternate';
     songAuthor.style.animation = 'skeleton-loading 1s linear infinite alternate';
 
@@ -37,6 +39,8 @@ function getSong(genreName = 'random') {
         })
         .catch(e => console.error(e))
         .finally(() => {
+            songName.classList.remove('w-32');
+            songAuthor.classList.remove('w-32');
             songName.style.removeProperty('animation');
             songAuthor.style.removeProperty('animation');
         })

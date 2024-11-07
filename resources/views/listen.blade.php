@@ -34,8 +34,8 @@
                 <img class="vinyl-disk" src="{{ asset('assets/vinyl-disk.png') }}"
                      alt="Vinyl disk">
                 <div>
-                    <h1 class="text-white font-semibold text-lg text-skeleton w-32 mb-1" id="song-name"></h1>
-                    <h6 class="text-gray-300 font-medium text-sm text-skeleton w-32" id="song-author"></h6>
+                    <h1 class="text-white font-semibold text-lg text-skeleton mb-1" id="song-name"></h1>
+                    <h6 class="text-gray-300 font-medium text-sm text-skeleton" id="song-author"></h6>
                 </div>
             </div>
 
