@@ -1,5 +1,5 @@
 import {appUrl} from "./loader.js";
-import {audio} from "./audio.js";
+import {audio, resetAnimations} from "./audio.js";
 
 const genre = document.querySelector('#genre');
 const songName = document.querySelector('#song-name');
@@ -17,6 +17,8 @@ function getSong(genreName = 'random') {
     audio.src = '';
     songName.innerText = '';
     songAuthor.innerText = '';
+
+    resetAnimations();
 
     songName.style.animation = 'skeleton-loading 1s linear infinite alternate';
     songAuthor.style.animation = 'skeleton-loading 1s linear infinite alternate';
