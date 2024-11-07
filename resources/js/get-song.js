@@ -29,7 +29,7 @@ function getRandomSong() {
         .then(data => {
             audio.src = 'songs/' + data.link
             songName.innerText = data.name || 'Unknown Song';
-            songAuthor.innerText = data.author || 'Unknown Author';
+            songAuthor.innerText = 'by ' + data.author || 'Unknown Author';
         })
         .catch(e => console.error(e))
         .finally(() => {

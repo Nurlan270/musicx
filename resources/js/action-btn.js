@@ -24,12 +24,14 @@ if (audio && button) {
     updateButton();
 
     button.onclick = () => {
-        !audio.paused
-            ? audio.pause()
-            : audio.play();
+        if (audio.src && audio.src !== 'about:blank') {
+            !audio.paused
+                ? audio.pause()
+                : audio.play();
 
-        updateButton();
+            updateButton();
+        }
     };
 }
 
-export { updateButton };
+export {updateButton};

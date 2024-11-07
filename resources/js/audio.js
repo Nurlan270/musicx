@@ -7,16 +7,20 @@ let intervalID;
 
 if (audio && disk) {
     function startAnimation() {
-        if (!intervalID) {
-            intervalID = setInterval(animateWave, 200);
+        if (audio.src && audio.src !== 'about:blank') {
+            if (!intervalID) {
+                intervalID = setInterval(animateWave, 200);
+            }
+            disk.style.animation = 'rotate-disk 4s linear infinite';
         }
-        disk.style.animation = 'rotate-disk 4s linear infinite';
     }
 
     function stopAnimation() {
-        clearInterval(intervalID);
-        intervalID = null;
-        disk.style.removeProperty('animation');
+        if (audio.src && audio.src !== 'about:blank') {
+            clearInterval(intervalID);
+            intervalID = null;
+            disk.style.removeProperty('animation');
+        }
     }
 
     if (!audio.paused) startAnimation()
