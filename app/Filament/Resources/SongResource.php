@@ -52,9 +52,12 @@ class SongResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name'),
-                Tables\Columns\TextColumn::make('author'),
-                Tables\Columns\TextColumn::make('genre.name'),
+                Tables\Columns\TextColumn::make('name')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('author')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('genre.name')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('link'),
             ])
             ->filters([
