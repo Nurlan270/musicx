@@ -1,4 +1,5 @@
 const waveContainer = document.getElementById("waveContainer");
+const audio = document.getElementById('audio');
 let columns;
 
 if (waveContainer) {
@@ -22,4 +23,4 @@ function animateWave() {
     });
 }
 
-export { columns, animateWave }
+export { audio, columns, animateWave }

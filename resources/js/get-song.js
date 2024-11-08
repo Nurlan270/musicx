@@ -54,4 +54,4 @@ function fetchSong(genreName, attempts = 3) {
         .catch(e => console.error(e))
 }
 
-export { genre, getSong }
+export {genre, getSong}

@@ -1,4 +1,4 @@
-import {audio} from "./audio.js";
+import {audio} from "./wave-animation.js";
 
 const button = document.getElementById('action-btn');
 

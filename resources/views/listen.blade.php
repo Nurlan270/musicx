@@ -24,7 +24,7 @@
             </button>
         </div>
 
-        <div class="flex items-center justify-between mt-4 px-4">
+        <div class="flex items-center justify-between mt-4 px-3">
             <audio id="audio" hidden>
                 Your browser does not support the audio.
             </audio>
