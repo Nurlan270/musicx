@@ -16,8 +16,10 @@ if (genre) {
 function getSong(genreName = 'random') {
     resetAnimations();
 
-    songName.classList.add('w-32');
-    songAuthor.classList.add('w-32');
+    songName.innerText = '‎ ';
+    songAuthor.innerText = '‎ ';
+    songName.classList.add('w-72');
+    songAuthor.classList.add('w-72');
     songName.style.animation = 'skeleton-loading 1s linear infinite alternate';
     songAuthor.style.animation = 'skeleton-loading 1s linear infinite alternate';
 
@@ -44,10 +46,12 @@ function fetchSong(genreName, attempts = 3) {
                 localStorage.setItem('lastPlayedSong', newSrc);
             }
 
-            songName.classList.remove('w-32');
-            songAuthor.classList.remove('w-32');
+            songName.classList.remove('w-72');
+            songAuthor.classList.remove('w-72');
             songName.style.removeProperty('animation');
             songAuthor.style.removeProperty('animation');
         })
         .catch(e => console.error(e))
 }
+
+export { genre, getSong }
