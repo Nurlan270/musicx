@@ -12,7 +12,7 @@ class GetSongController extends Controller
 {
     public function byGenre(Request $request, Genre $genre)
     {
-        if ($song = Song::query()->where('genre_id', $genre->id)->first()) {
+        if ($song = Song::query()->where('genre_id', $genre->id)->inRandomOrder()->first()) {
             return new SongResource($song);
         }
 
