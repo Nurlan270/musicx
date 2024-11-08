@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('songs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('author')->default('Unknown Author');
+            $table->string('author')->nullable()->default('Unknown Author');
             $table->foreignIdFor(Genre::class);
             $table->text('link');
         });

@@ -14,10 +14,6 @@ if (genre) {
 }
 
 function getSong(genreName = 'random') {
-    audio.src = '';
-    songName.innerText = '';
-    songAuthor.innerText = '';
-
     resetAnimations();
 
     songName.classList.add('w-32');
@@ -25,23 +21,33 @@ function getSong(genreName = 'random') {
     songName.style.animation = 'skeleton-loading 1s linear infinite alternate';
     songAuthor.style.animation = 'skeleton-loading 1s linear infinite alternate';
 
+    fetchSong(genreName);
+}
+
+function fetchSong(genreName, attempts = 3) {
     fetch(appUrl + `/api/songs/${genreName}`)
         .then(response => {
-            if (!response.ok) {
-                throw new Error("Couldn't get song, please try again.");
-            }
+            if (!response.ok) throw new Error("Couldn't get song, please try again.");
             return response.json();
         })
         .then(data => {
-            audio.src = 'songs/' + data.link
-            songName.innerText = data.name || 'Unknown Song';
-            songAuthor.innerText = 'by ' + data.author || 'Unknown Author';
-        })
-        .catch(e => console.error(e))
-        .finally(() => {
+            const newSrc = 'songs/' + data.link;
+            const lastPlayedSong = localStorage.getItem('lastPlayedSong');
+
+            if (newSrc === lastPlayedSong && attempts > 0) {
+                fetchSong(genreName, attempts - 1);
+            } else {
+                audio.src = newSrc;
+                songName.innerText = data.name || 'Unknown Song';
+                songAuthor.innerText = 'by ' + (data.author || 'Unknown Author');
+
+                localStorage.setItem('lastPlayedSong', newSrc);
+            }
+
             songName.classList.remove('w-32');
             songAuthor.classList.remove('w-32');
             songName.style.removeProperty('animation');
             songAuthor.style.removeProperty('animation');
         })
+        .catch(e => console.error(e))
 }

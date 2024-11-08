@@ -30,6 +30,7 @@ class SongResource extends Resource
                     ->placeholder('NBA')
                     ->required(),
                 Forms\Components\TextInput::make('author')
+                    ->default('Unknown Author')
                     ->placeholder('Billie Eilish'),
                 Forms\Components\Select::make('genre_id')
                     ->relationship('genre', 'name')

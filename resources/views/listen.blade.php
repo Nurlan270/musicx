@@ -26,20 +26,21 @@
 
         <div class="flex items-center justify-between mt-4 px-4">
             <audio id="audio" hidden>
-                <source src="" type="audio/mpeg">
                 Your browser does not support the audio.
             </audio>
 
             <div class="flex items-center space-x-4">
                 <img class="vinyl-disk" src="{{ asset('assets/vinyl-disk.png') }}"
                      alt="Vinyl disk">
-                <div>
-                    <h1 class="text-white font-semibold text-lg text-skeleton mb-1" id="song-name"></h1>
-                    <h6 class="text-gray-300 font-medium text-sm text-skeleton" id="song-author"></h6>
+                <div id="text-container">
+                    <h1 class="text-white font-semibold text-lg text-skeleton mb-1" id="song-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+                    <h6 class="text-gray-300 font-medium text-sm text-skeleton" id="song-author">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
                 </div>
             </div>
 
-            <button id="action-btn" class="hover:bg-[#424242] rounded-lg p-2 transition-colors"></button>
+            <div>
+                <button id="action-btn" class="hover:bg-[#424242] rounded-lg p-2 transition-colors"></button>
+            </div>
 
             <div class="wave-container" id="waveContainer"></div>
         </div>
