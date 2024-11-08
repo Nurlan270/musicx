@@ -29,16 +29,15 @@
                 Your browser does not support the audio.
             </audio>
 
-            <div class="flex items-center space-x-4">
-                <img class="vinyl-disk" src="{{ asset('assets/vinyl-disk.png') }}"
-                     alt="Vinyl disk">
-                <div id="text-container">
+            <div class="flex items-center space-x-4 flex-grow">
+                <img class="vinyl-disk" src="{{ asset('assets/vinyl-disk.png') }}" alt="Vinyl disk">
+                <div id="text-container" class="flex-grow">
                     <h1 class="text-white font-semibold text-lg text-skeleton mb-1" id="song-name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
                     <h6 class="text-gray-300 font-medium text-sm text-skeleton" id="song-author">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h6>
                 </div>
             </div>
 
-            <div>
+            <div class="flex justify-center" style="min-width: 50px;">
                 <button id="action-btn" class="hover:bg-[#424242] rounded-lg p-2 transition-colors"></button>
             </div>
 
