@@ -11,7 +11,7 @@ if (repeatBtn) {
             localStorage.setItem('isRepeating', JSON.stringify(true));
             audio.loop = true;
 
-            repeatBtn.title = 'Stop repeating'
+            repeatBtn.title = 'Repeat';
 
             repeatSvg.classList.add('-translate-y-1');
             repeatSvg.classList.add('text-[#eab308]');
@@ -22,7 +22,7 @@ if (repeatBtn) {
             localStorage.setItem('isRepeating', JSON.stringify(false));
             audio.loop = false;
 
-            repeatBtn.title = 'Start repeating'
+            repeatBtn.title = "Don't repeat";
 
             repeatSvg.classList.remove('-translate-y-1');
             repeatSvg.classList.remove('text-[#eab308]');
