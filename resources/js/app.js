@@ -10,3 +10,4 @@ import './dynamic-background';
 import './get-song'
 import './shuffle'
 import './labs'
+import './repeat'

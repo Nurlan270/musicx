@@ -14,9 +14,12 @@ if (audio && disk) {
     audio.onplaying = startAnimation;
     audio.onpause = stopAnimation;
     audio.onended = () => {
-        genre.value === 'none'
-            ? getSong()
-            : getSong(genre.value);
+        const shouldRepeat = JSON.parse(localStorage.getItem('isRepeating'));
+        if (!shouldRepeat) {
+            genre.value === 'none'
+                ? getSong()
+                : getSong(genre.value);
+        }
 
         audio.oncanplay = () => audio.play();
     }
