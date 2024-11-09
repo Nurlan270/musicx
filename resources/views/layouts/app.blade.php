@@ -94,12 +94,15 @@
             <p>We’re also open to ideas for making our site even better, so feel free to reach out with suggestions.</p>
             <br>
             <p>Email us at <span class="font-medium hover:underline text-[#eab308] cursor-pointer px-1"><a
+                        target="_blank"
                         href="mailto:feedback@nurlan.dev">feedback@nurlan.dev</a></span> or click the button below to
                 get in touch.</p>
         </div>
 
         <div class="flex items-center justify-center mt-7">
-            <a href="mailto:feedback@nurlan.dev" class="border px-9 py-2 rounded-xl border-[#eab308] text-[#eab308] font-bold bg-transparent transition-colors hover:bg-[#eab308] hover:text-white">Get in
+            <a target="_blank" href="mailto:feedback@nurlan.dev"
+               class="border px-9 py-2 rounded-xl border-[#eab308] text-[#eab308] font-bold bg-transparent transition-colors hover:bg-[#eab308] hover:text-white">Get
+                in
                 touch</a>
         </div>
     </div>
