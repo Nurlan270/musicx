@@ -3,17 +3,19 @@ const closeModalBtn = document.getElementById("closeModal");
 const modal = document.getElementById("labs-modal");
 const overlay = document.getElementById("overlay");
 
-// Open modal
-openModalBtn.addEventListener("click", () => {
-    modal.classList.remove("hidden");
-});
+if (openModalBtn && closeModalBtn && modal && overlay) {
+    // Open modal
+    openModalBtn.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+    });
 
 // Close modal
-closeModalBtn.addEventListener("click", () => {
-    modal.classList.add("hidden");
-});
+    closeModalBtn.addEventListener("click", () => {
+        modal.classList.add("hidden");
+    });
 
 // Close modal when clicking outside
-overlay.addEventListener("click", () => {
-    modal.classList.add("hidden");
-});
+    overlay.addEventListener("click", () => {
+        modal.classList.add("hidden");
+    });
+}

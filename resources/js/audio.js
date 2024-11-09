@@ -23,7 +23,6 @@ if (audio && disk) {
 }
 
 function resetAnimations() {
-    updateButton();
     stopAnimation();
     columns.forEach(column => {
         column.style.transform = 'scaleY(1)'; // Reset to original scale
@@ -31,8 +30,8 @@ function resetAnimations() {
 }
 
 function startAnimation() {
+    updateButton();
     if (audio.src && audio.src !== 'about:blank') {
-        updateButton();
         if (!intervalID) {
             intervalID = setInterval(animateWave, 200);
         }
@@ -41,8 +40,8 @@ function startAnimation() {
 }
 
 function stopAnimation() {
+    updateButton();
     if (audio.src && audio.src !== 'about:blank') {
-        updateButton();
         clearInterval(intervalID);
         intervalID = null;
         disk.style.removeProperty('animation');

@@ -11,6 +11,8 @@ if (genre) {
         : getSong(genre.value);
 
     genre.onchange = () => getSong(genre.value);
+
+    audio.oncanplay = () => audio.play();
 }
 
 function getSong(genreName = 'random') {
@@ -24,6 +26,8 @@ function getSong(genreName = 'random') {
     songAuthor.style.animation = 'skeleton-loading 1s linear infinite alternate';
 
     fetchSong(genreName);
+
+    resetAnimations();
 }
 
 function fetchSong(genreName, attempts = 3) {
