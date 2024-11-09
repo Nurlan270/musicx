@@ -9,3 +9,4 @@ import './change-gif';
 import './dynamic-background';
 import './get-song'
 import './shuffle'
+import './labs'

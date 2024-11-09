@@ -17,7 +17,6 @@
         "vite": "^5.0"
     },
     "dependencies": {
-        "@preline/select": "^2.5.1",
         "colorthief": "^2.6.0"
     }
 }
