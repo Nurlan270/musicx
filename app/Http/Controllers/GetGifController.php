@@ -18,6 +18,6 @@ class GetGifController extends Controller
             return new GifResource($randomGif);
         }
 
-        return response()->json('No song exists, please first add any song.', Response::HTTP_NOT_FOUND);
+        return response()->json('No gif exists, please first add any gif.', Response::HTTP_NOT_FOUND);
     }
 }
