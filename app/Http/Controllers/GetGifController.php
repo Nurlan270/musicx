@@ -12,13 +12,11 @@ class GetGifController extends Controller
     public function random(Request $request)
     {
         if (Gif::query()->exists()) {
-            $randomId = mt_rand(Gif::query()->min('id'), Gif::query()->max('id'));
-            $randomGif = Gif::query()->whereKey($randomId)->first();
+            $randomGif = Gif::query()->inRandomOrder()->first();
 
-            return \response()->json([$randomGif, $randomId, Gif::query()->exists()]);
-//            return new GifResource($randomGif);
+            return new GifResource($randomGif);
         }
 
-        return response()->json('No gif exists, please first add any gif.', Response::HTTP_NOT_FOUND);
+        return response()->json('No gif exists, please first add some gif.', Response::HTTP_NOT_FOUND);
     }
 }
