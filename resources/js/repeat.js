@@ -1,6 +1,6 @@
 import {audio} from "./audio.js";
 import {genre, getSong} from "./get-song.js";
-import {changeGif} from "./change-gif.js";
+import {changeGif, gif} from "./change-gif.js";
 
 const repeatBtn = document.querySelector('#repeat-btn');
 const repeatSvg = document.querySelector('#repeat-svg');
@@ -38,18 +38,20 @@ function repeat() {
 }
 
 //      Key Events
-window.onkeydown = (event) => {
-    if (event.code === 'Space') {
-        audio.paused
-            ? audio.play()
-            : audio.pause()
-    } else if (event.key === 'Enter') {
-        genre.value === 'none'
-            ? getSong()
-            : getSong(genre.value);
-    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
-        changeGif();
-    } else if (event.key === 'r' || event.key === 'R') {
-        repeat();
+if (audio && gif && genre) {
+    window.onkeydown = (event) => {
+        if (event.code === 'Space') {
+            audio.paused
+                ? audio.play()
+                : audio.pause()
+        } else if (event.key === 'Enter') {
+            genre.value === 'none'
+                ? getSong()
+                : getSong(genre.value);
+        } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+            changeGif();
+        } else if (event.key === 'r' || event.key === 'R') {
+            repeat();
+        }
     }
 }
