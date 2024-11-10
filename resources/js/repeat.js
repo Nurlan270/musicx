@@ -1,34 +1,56 @@
 import {audio} from "./audio.js";
+import {genre, getSong} from "./get-song.js";
+import {changeGif} from "./change-gif.js";
 
 const repeatBtn = document.querySelector('#repeat-btn');
 const repeatSvg = document.querySelector('#repeat-svg');
 const repeatDot = document.querySelector('#repeat-dot');
 
 if (repeatBtn) {
-    repeatBtn.onclick = () => {
-        const isRepeating = JSON.parse(localStorage.getItem('isRepeating'));
-        if (!isRepeating) { //  Repeating is on
-            localStorage.setItem('isRepeating', JSON.stringify(true));
-            audio.loop = true;
+    repeatBtn.onclick = () => repeat();
+}
 
-            repeatBtn.title = 'Repeat';
+function repeat() {
+    const isRepeating = JSON.parse(localStorage.getItem('isRepeating'));
+    if (!isRepeating) { //  Repeating is on
+        localStorage.setItem('isRepeating', JSON.stringify(true));
+        audio.loop = true;
 
-            repeatSvg.classList.add('-translate-y-1');
-            repeatSvg.classList.add('text-[#eab308]');
+        repeatBtn.title = 'Repeat';
 
-            repeatDot.classList.remove('hidden');
-            repeatDot.classList.add('text-[#eab308]');
-        } else {    //  Repeating is off
-            localStorage.setItem('isRepeating', JSON.stringify(false));
-            audio.loop = false;
+        repeatSvg.classList.add('-translate-y-1');
+        repeatSvg.classList.add('text-[#eab308]');
 
-            repeatBtn.title = "Don't repeat";
+        repeatDot.classList.remove('hidden');
+        repeatDot.classList.add('text-[#eab308]');
+    } else {    //  Repeating is off
+        localStorage.setItem('isRepeating', JSON.stringify(false));
+        audio.loop = false;
 
-            repeatSvg.classList.remove('-translate-y-1');
-            repeatSvg.classList.remove('text-[#eab308]');
+        repeatBtn.title = "Don't repeat";
 
-            repeatDot.classList.add('hidden');
-            repeatDot.classList.remove('text-[#eab308]');
-        }
+        repeatSvg.classList.remove('-translate-y-1');
+        repeatSvg.classList.remove('text-[#eab308]');
+
+        repeatDot.classList.add('hidden');
+        repeatDot.classList.remove('text-[#eab308]');
+    }
+}
+
+//      Key Events
+window.onkeydown = (event) => {
+    console.log(event.key, event.code)
+    if (event.code === 'Space') {
+        audio.paused
+            ? audio.play()
+            : audio.pause()
+    } else if (event.key === 'Enter') {
+        genre.value === 'none'
+            ? getSong()
+            : getSong(genre.value);
+    } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        changeGif();
+    } else if (event.key === 'r' || event.key === 'R') {
+        repeat();
     }
 }
