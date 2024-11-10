@@ -38,7 +38,7 @@
             </div>
 
             <div class="flex justify-center items-center gap-x-2 me-3">
-                <button id="repeat-btn" title="Repeat" class="flex flex-col items-center relative text-white hover:bg-[#424242] rounded-lg p-2 transition-colors">
+                <button id="repeat-btn" title="Enable repeating (R)" class="flex flex-col items-center relative text-white hover:bg-[#424242] rounded-lg p-2 transition-colors">
                     <svg id="repeat-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                          stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -46,7 +46,7 @@
                     </svg>
                     <span id="repeat-dot" class="font-bold absolute text-3xl hidden">.</span>
                 </button>
-                <button id="shuffle-btn" class="hover:bg-[#424242] rounded-lg p-2 transition-colors" title="Shuffle">
+                <button id="shuffle-btn" class="hover:bg-[#424242] rounded-lg p-2 transition-colors" title="Shuffle (Enter)">
                     <svg id="Flat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
                          class="size-6 text-white fill-current">
                         <path

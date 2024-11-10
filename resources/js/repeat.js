@@ -22,7 +22,7 @@ function repeat() {
         localStorage.setItem('isRepeating', JSON.stringify(true));
         audio.loop = true;
 
-        repeatBtn.title = 'Repeat';
+        repeatBtn.title = "Disable repeating (R)";
 
         repeatSvg.classList.add('-translate-y-1');
         repeatSvg.classList.add('text-[#eab308]');
@@ -33,7 +33,7 @@ function repeat() {
         localStorage.setItem('isRepeating', JSON.stringify(false));
         audio.loop = false;
 
-        repeatBtn.title = "Don't repeat";
+        repeatBtn.title = "Enable repeating (R)";
 
         repeatSvg.classList.remove('-translate-y-1');
         repeatSvg.classList.remove('text-[#eab308]');
