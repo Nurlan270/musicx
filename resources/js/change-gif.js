@@ -8,6 +8,11 @@ const appUrl = url ? url.getAttribute('content') : null;
 
 if (changeBtn && gif && loader) {
     changeBtn.onclick = () => changeGif();
+    changeBtn.onkeydown = (event) => {
+        if (event.code !== 'ArrowLeft' || event.code !== 'ArrowRight') {
+            event.preventDefault();
+        }
+    }
 }
 
 function changeGif() {
@@ -31,13 +36,13 @@ function fetchGif(attempts = 3) {
             return response.json();
         })
         .then(data => {
-            const newGif = data.link;
+            const newGif = 'gifs/' + data.link;
             const lastPlayedGif = localStorage.getItem('lastPlayedGif');
 
             if (newGif === lastPlayedGif && attempts > 0) {
                 fetchGif(attempts - 1);
             } else {
-                gif.src = 'gifs/' + newGif;
+                gif.src = newGif;
 
                 localStorage.setItem('lastPlayedGif', newGif);
             }

@@ -8,6 +8,12 @@ const repeatDot = document.querySelector('#repeat-dot');
 
 if (repeatBtn) {
     repeatBtn.onclick = () => repeat();
+
+    repeatBtn.onkeydown = (event) => {
+        if (event.code === 'KeyR') {
+            event.preventDefault();
+        }
+    }
 }
 
 function repeat() {

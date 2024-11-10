@@ -37,17 +37,17 @@ function fetchSong(genreName, attempts = 3) {
             return response.json();
         })
         .then(data => {
-            const newSrc = 'songs/' + data.link;
+            const newSong = 'songs/' + data.link;
             const lastPlayedSong = localStorage.getItem('lastPlayedSong');
 
-            if (newSrc === lastPlayedSong && attempts > 0) {
+            if (newSong === lastPlayedSong && attempts > 0) {
                 fetchSong(genreName, attempts - 1);
             } else {
-                audio.src = newSrc;
+                audio.src = newSong;
                 songName.innerText = data.name || 'Unknown Song';
                 songAuthor.innerText = 'by ' + (data.author || 'Unknown Author');
 
-                localStorage.setItem('lastPlayedSong', newSrc);
+                localStorage.setItem('lastPlayedSong', newSong);
             }
 
             songName.classList.remove('w-72');

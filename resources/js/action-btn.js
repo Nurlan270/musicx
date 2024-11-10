@@ -34,6 +34,12 @@ if (audio && button) {
             updateButton();
         }
     };
+
+    button.onkeydown = (event) => {
+        if (event.code !== 'Space') {
+            event.preventDefault();
+        }
+    }
 }
 
 export {updateButton};
