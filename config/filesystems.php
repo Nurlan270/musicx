@@ -63,7 +63,15 @@ return [
             'url' => env('APP_URL').'/songs',
             'visibility' => 'public',
             'throw' => false,
-        ]
+        ],
+
+        'gifs' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/gifs'),
+            'url' => env('APP_URL').'/gifs',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
     ],
 
     /*
@@ -79,6 +87,7 @@ return [
 
     'links' => [
         public_path('songs') => storage_path('app/public/songs'),
+        public_path('gifs') => storage_path('app/public/gifs'),
     ],
 
 ];

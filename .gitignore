@@ -4,6 +4,7 @@
 /public/hot
 /public/storage
 /public/songs
+/public/gifs
 /storage/*.key
 /storage/pail
 /vendor

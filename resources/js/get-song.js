@@ -1,4 +1,4 @@
-import {appUrl} from "./loader.js";
+import {appUrl} from "./change-gif.js";
 import {audio, resetAnimations} from "./audio.js";
 
 const genre = document.querySelector('#genre');

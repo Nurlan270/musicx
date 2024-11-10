@@ -1,27 +1,48 @@
-import {changeBtn, gif, loader} from './loader.js';
 import {changeBackground} from "./dynamic-background.js";
+
+const gif = document.querySelector('.gif');
+const loader = document.querySelector('.loader');
+const changeBtn = document.querySelector('.change-gif-btn');
+const url = document.querySelector('meta[name="url"]');
+const appUrl = url ? url.getAttribute('content') : null;
 
 if (changeBtn && gif && loader) {
     changeBtn.onclick = () => changeGif();
+}
 
-    function changeGif() {
-        gif.classList.add('hidden');
-        loader.classList.remove('hidden');
+function changeGif() {
+    gif.classList.add('hidden');
+    loader.classList.remove('hidden');
 
-        const newGifNum = Math.floor(Math.random() * 11 + 1);
-        const currentGifNum = Number(gif.src.match(/lofi-(\d+)\.gif/)[1]);
-        const appUrl = document.querySelector('meta[name="url"]').getAttribute('content');
+    fetchGif();
 
-        newGifNum === currentGifNum
-            ? changeGif()
-            : gif.src = `${appUrl}/gifs/lofi-${newGifNum}.gif`;
+    gif.onload = () => {
+        loader.classList.add('hidden');
+        gif.classList.remove('hidden');
 
-        gif.onload = () => {
-            loader.classList.add('hidden');
-            gif.classList.remove('hidden');
-
-            changeBackground();
-        }
-
+        changeBackground();
     }
 }
+
+function fetchGif(attempts = 3) {
+    fetch(appUrl + '/api/gifs/random')
+        .then(response => {
+            if (!response.ok) throw new Error("Couldn't get Gif, please try again.");
+            return response.json();
+        })
+        .then(data => {
+            const newGif = data.link;
+            const lastPlayedGif = localStorage.getItem('lastPlayedGif');
+
+            if (newGif === lastPlayedGif && attempts > 0) {
+                fetchGif(attempts - 1);
+            } else {
+                gif.src = 'gifs/' + newGif;
+
+                localStorage.setItem('lastPlayedGif', newGif);
+            }
+        })
+        .catch(e => console.error(e))
+}
+
+export {appUrl, gif, changeBtn, loader, changeGif, fetchGif}
