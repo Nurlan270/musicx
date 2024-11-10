@@ -39,7 +39,6 @@ function repeat() {
 
 //      Key Events
 window.onkeydown = (event) => {
-    console.log(event.key, event.code)
     if (event.code === 'Space') {
         audio.paused
             ? audio.play()
