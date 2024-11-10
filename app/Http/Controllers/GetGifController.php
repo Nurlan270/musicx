@@ -15,7 +15,8 @@ class GetGifController extends Controller
             $randomId = mt_rand(Gif::query()->min('id'), Gif::query()->max('id'));
             $randomGif = Gif::query()->whereKey($randomId)->first();
 
-            return new GifResource($randomGif);
+            return \response()->json([$randomGif, $randomId, Gif::query()->exists()]);
+//            return new GifResource($randomGif);
         }
 
         return response()->json('No gif exists, please first add any gif.', Response::HTTP_NOT_FOUND);
