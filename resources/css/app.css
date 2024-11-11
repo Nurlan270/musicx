@@ -83,3 +83,13 @@ header {
         background-color: hsl(0, 0%, 40%);
     }
 }
+
+@media (max-width: 1065px) {
+    #content {
+        display: none;
+    }
+
+    #mobile-message {
+        display: flex;
+    }
+}
