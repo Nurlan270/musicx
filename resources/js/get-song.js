@@ -5,7 +5,7 @@ const genre = document.querySelector('#genre');
 const songName = document.querySelector('#song-name');
 const songAuthor = document.querySelector('#song-author');
 
-if (genre) {
+if (genre && window.innerWidth > 1065) {
     genre.value === 'none'
         ? getSong()
         : getSong(genre.value);

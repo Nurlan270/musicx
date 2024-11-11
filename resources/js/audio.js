@@ -6,7 +6,7 @@ import {audio} from "./wave-animation.js";
 const disk = document.querySelector('.vinyl-disk');
 let intervalID;
 
-if (audio && disk) {
+if (audio && disk && window.innerWidth > 1065) {
     if (!audio.paused) startAnimation()
 
 // Attach event listeners for play, pause

@@ -1,7 +1,7 @@
 import {changeBackground} from "./dynamic-background.js";
 import {appUrl, gif, changeBtn, loader, changeGif, fetchGif} from "./change-gif.js";
 
-if (loader && gif && changeBtn) {
+if (loader && gif && changeBtn && window.innerWidth > 1065) {
     loader.classList.remove('hidden');
 
     changeGif();
