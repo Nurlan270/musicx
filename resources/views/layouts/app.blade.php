@@ -57,7 +57,7 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="h-screen px-72 text-white bg-[#181818] overflow-hidden">
+<body class="h-screen px-72 text-white bg-[#181818] overflow-hidden sm:overflow-y-auto">
 
 <div id="mobile-message"
      class="fixed inset-0 flex items-center px-4 justify-center bg-[#181818] text-center text-[#eab308] text-2xl font-bold hidden">

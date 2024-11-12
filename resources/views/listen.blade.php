@@ -3,15 +3,13 @@
 @section('content')
 
     <div>
-        <div class="relative group">
-            <div class="w-full h-[575px]">
-                <img class="rounded-2xl h-full hidden gif"
-                     src=""
-                     alt="Gif (Something went wrong while loading gif, refresh page to retry)">
+        <div class="w-full h-[575px] relative group">
+            <img class="rounded-2xl h-full w-full hidden gif"
+                 src=""
+                 alt="Gif">
 
-                <div class="rounded-2xl bg-[#262626] h-full flex items-center justify-center hidden loader">
-                    <img class="w-40" src="{{ asset('assets/loader.svg') }}" alt="Loading...">
-                </div>
+            <div class="rounded-2xl bg-[#262626] h-full flex items-center justify-center hidden loader">
+                <img class="w-40" src="{{ asset('assets/loader.svg') }}" alt="Loading...">
             </div>
 
             <button class="hidden absolute top-5 right-5 p-2 rounded-xl bg-[#424242] cursor-pointer change-gif-btn"
@@ -38,15 +36,18 @@
             </div>
 
             <div class="flex justify-center items-center gap-x-2 me-3">
-                <button id="repeat-btn" title="Enable repeating (R)" class="flex flex-col items-center relative text-white hover:bg-[#424242] rounded-lg p-2 transition-colors">
-                    <svg id="repeat-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                <button id="repeat-btn" title="Enable repeating (R)"
+                        class="flex flex-col items-center relative text-white hover:bg-[#424242] rounded-lg p-2 transition-colors">
+                    <svg id="repeat-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                         stroke-width="1.5"
                          stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
                               d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 0 0-3.7-3.7 48.678 48.678 0 0 0-7.324 0 4.006 4.006 0 0 0-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 0 0 3.7 3.7 48.656 48.656 0 0 0 7.324 0 4.006 4.006 0 0 0 3.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3-3 3"/>
                     </svg>
                     <span id="repeat-dot" class="font-bold absolute text-3xl hidden">.</span>
                 </button>
-                <button id="shuffle-btn" class="hover:bg-[#424242] rounded-lg p-2 transition-colors" title="Shuffle (Enter)">
+                <button id="shuffle-btn" class="hover:bg-[#424242] rounded-lg p-2 transition-colors"
+                        title="Shuffle (Enter)">
                     <svg id="Flat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"
                          class="size-6 text-white fill-current">
                         <path
