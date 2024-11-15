@@ -10,7 +10,7 @@ if (repeatBtn) {
     repeatBtn.onclick = () => repeat();
 
     repeatBtn.onkeydown = (event) => {
-        if (event.code === 'KeyR') {
+        if (event.code !== 'KeyR') {
             event.preventDefault();
         }
     }
