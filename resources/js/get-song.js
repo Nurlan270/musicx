@@ -13,6 +13,8 @@ if (genre && window.innerWidth > 1065) {
     genre.onchange = () => getSong(genre.value);
 
     audio.oncanplay = () => audio.play();
+
+    genre.onkeydown = (event) => event.preventDefault();
 }
 
 function getSong(genreName = 'random') {
